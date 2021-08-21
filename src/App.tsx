@@ -6,9 +6,9 @@ import Todos from './views/Todos';
 function App() {
   return (
 
-    <TodoProvider>
+    
       <Todos />
-    </TodoProvider>
+    
   )
   
 }

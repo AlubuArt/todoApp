@@ -1,36 +1,46 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
+import { TodoContext } from "../contexts/todosContext";
 import styles from './Todos.module.css';
 
-const Todos = () => {
+const Todos: React.FC = () => {
 
-    const [todos, setTodos] = useState(["hello there", "general kenobi"])
-    const [newTodo, setNewTodo] = useState('')
+    const {todos, addTodo } = useContext(TodoContext)
+    const [inputData, setInputData] = useState<Todo| {} >('')
+    
        
 
-    const addTodo = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleAddTodo = (e: React.FormEvent, inputData: Todo | any) => {
         e.preventDefault()
-        setTodos([...todos, newTodo])
-        setNewTodo('')
+        console.log(inputData)
+        addTodo(inputData)
+        setInputData('')
+        
+        
     
     };
 
     const removeTodo = (removeIndex: number) => {
-        setTodos(todos.filter((_, index) => index !== removeIndex))
+        //setTodos(todos.filter((_, index) => index !== removeIndex))
     };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+            setInputData({
+                ...inputData,
+                [e.currentTarget.id]:e.currentTarget.value})  
+    }
   
     return (
       <div className={styles.todosContainer}>
         <h2 style={{ textAlign: "center" }}>Todo</h2>
         <form
-          onSubmit={addTodo}
+          onSubmit={(e) => handleAddTodo(e, inputData)}
           style={{ display: "flex", marginBottom: 8 }}
         >
           <input
+            value={inputData}
             type="text"
-            name="newTodo"
-            id="newTodo"
-            value={newTodo}
-            onChange={(e) => setNewTodo(e.target.value)}
+            id="title"
+            onChange={handleChange}
             placeholder="Fix the thing.."
             className={styles.input}
           />
@@ -50,7 +60,7 @@ const Todos = () => {
               key={`${todo}-${i}`}
               className={styles.todo}
             >
-              <span style={{ flex: 1 }}>{todo}</span>
+              <span style={{ flex: 1 }}>{todo.title}</span>
               <span
                 style={{ cursor: "pointer" }}
                 onClick={() => removeTodo(i)}

@@ -2,6 +2,11 @@ interface Todo {
     title: string
 }
 
-type ContextType = {
+interface Todos {
     todos: [];
 }
+
+interface input {
+    
+}
+
