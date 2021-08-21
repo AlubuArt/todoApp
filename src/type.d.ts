@@ -1,12 +1,11 @@
 interface Todo {
-    title: string
+    title: string;
+    status: string;
 }
 
 interface Todos {
     todos: [];
 }
 
-interface input {
-    
-}
+
 

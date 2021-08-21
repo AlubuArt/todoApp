@@ -8,24 +8,19 @@ interface TodoContextInterface {
 
 
 export const TodoContext = React.createContext<TodoContextInterface>({
-  todos: [{ title: "todo1" }, { title: "todo2" }],
+  todos: [{ title: "todo1", status:'' }],
   addTodo: () => {}, 
   removeTodo: () => {}
 });
 
 const TodoProvider: React.FC = ({ children }) => {
   const [todos, setTodos] = useState<Todo[]>([
-    {
-      title: "todo3",
-    },
-    {
-      title: "todo4",
-    },
-  ]);
+    ]);
 
   const addTodo = (todo: Todo) => {
       const newTodo: Todo = {
-          title: todo.title
+          title: todo.title,
+          status: "Todo"
       }
       setTodos([...todos, newTodo])
   };
