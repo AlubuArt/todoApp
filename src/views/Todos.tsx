@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import styles from './Todos.module.css';
 
 const Todos = () => {
 
@@ -18,15 +19,7 @@ const Todos = () => {
     };
   
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          width: 500,
-          margin: "0 auto",
-          padding: 8,
-        }}
-      >
+      <div className={styles.todosContainer}>
         <h2 style={{ textAlign: "center" }}>Todo</h2>
         <form
           onSubmit={addTodo}
@@ -39,17 +32,11 @@ const Todos = () => {
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}
             placeholder="Fix the thing.."
-            style={{
-              display: "inline-flex",
-              flex: 1,
-              padding: 4,
-              border: "1px solid #eaeaea",
-              marginRight: 4,
-            }}
+            className={styles.input}
           />
           <button
             type="submit"
-            style={{ borderColor: "#eaeaea", backgroundColor: "#fff" }}
+            className={styles.button}
           >
             Add
           </button>
@@ -61,11 +48,7 @@ const Todos = () => {
           {todos.map((todo, i) => (
             <div
               key={`${todo}-${i}`}
-              style={{
-                padding: 4,
-                borderBottom: "1px solid #ccc",
-                display: "flex",
-              }}
+              className={styles.todo}
             >
               <span style={{ flex: 1 }}>{todo}</span>
               <span
