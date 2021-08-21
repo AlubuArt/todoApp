@@ -1,25 +1,22 @@
-import { Component } from "react";
+import React, {useState} from "react";
 
-export default class Todos extends Component {
-  state = {
-    newTodo: "",
-    todos: ["hello there", "general kenobi"],
-  };
+const Todos = () => {
 
-  onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!this.state.newTodo) return;
+    const [todos, setTodos] = useState(["hello there", "general kenobi"])
+    const [newTodo, setNewTodo] = useState('')
+       
 
-    const todos = [this.state.newTodo, ...this.state.todos];
-    this.setState({ newTodo: "", todos });
-  };
+    const addTodo = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        setTodos([...todos, newTodo])
+        setNewTodo('')
+    
+    };
 
-  removeTodo = (removeIndex: number) => {
-    const todos = this.state.todos.filter((_, index) => index !== removeIndex);
-    this.setState({ todos });
-  };
-
-  render() {
+    const removeTodo = (removeIndex: number) => {
+        setTodos(todos.filter((_, index) => index !== removeIndex))
+    };
+  
     return (
       <div
         style={{
@@ -32,15 +29,15 @@ export default class Todos extends Component {
       >
         <h2 style={{ textAlign: "center" }}>Todo</h2>
         <form
-          onSubmit={this.onSubmit}
+          onSubmit={addTodo}
           style={{ display: "flex", marginBottom: 8 }}
         >
           <input
             type="text"
             name="newTodo"
             id="newTodo"
-            value={this.state.newTodo}
-            onChange={(e) => this.setState({ newTodo: e.target.value })}
+            value={newTodo}
+            onChange={(e) => setNewTodo(e.target.value)}
             placeholder="Fix the thing.."
             style={{
               display: "inline-flex",
@@ -58,10 +55,10 @@ export default class Todos extends Component {
           </button>
         </form>
         <div>
-          {this.state.todos.length === 0 && (
+          {todos.length === 0 && (
             <div style={{ textAlign: "center" }}>Add some todos</div>
           )}
-          {this.state.todos.map((todo, i) => (
+          {todos.map((todo, i) => (
             <div
               key={`${todo}-${i}`}
               style={{
@@ -73,7 +70,7 @@ export default class Todos extends Component {
               <span style={{ flex: 1 }}>{todo}</span>
               <span
                 style={{ cursor: "pointer" }}
-                onClick={() => this.removeTodo(i)}
+                onClick={() => removeTodo(i)}
               >
                 &times;
               </span>
@@ -83,4 +80,9 @@ export default class Todos extends Component {
       </div>
     );
   }
-}
+
+
+export default Todos;
+
+  
+
