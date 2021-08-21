@@ -1,25 +1,27 @@
 import React, { useState } from "react";
 
-interface TodoContextInterface {
+export interface TodoContextInterface {
   todos: Todo[];
-  addTodo: (todo: Todo) => void;
+  addTodo: (title: string ) => void;
   removeTodo: (todo: Todo, index: number) => void;
+  toggleStatus: (todo: Todo, index: number, status: string) => void
 }
-
 
 export const TodoContext = React.createContext<TodoContextInterface>({
   todos: [{ title: "todo1", status:'' }],
   addTodo: () => {}, 
-  removeTodo: () => {}
+  removeTodo: () => {},
+  toggleStatus: () => {}
 });
 
 const TodoProvider: React.FC = ({ children }) => {
   const [todos, setTodos] = useState<Todo[]>([
     ]);
 
-  const addTodo = (todo: Todo) => {
+  const addTodo = (title: string) => {
+    console.log(title)
       const newTodo: Todo = {
-          title: todo.title,
+          title: title,
           status: "Todo"
       }
       setTodos([...todos, newTodo])
@@ -29,8 +31,19 @@ const TodoProvider: React.FC = ({ children }) => {
         setTodos(todos.filter((_, index) => index !== removeIndex))
   }
 
+  const toggleStatus = (todo: Todo, toggleIndex: number, status: string) => {
+      
+    todos.filter((_, index) => {
+      if(index === toggleIndex) {
+        todo.status = status;
+        setTodos([...todos])
+      }
+    })
+    
+  }
+
   return (
-    <TodoContext.Provider value={{ todos, addTodo, removeTodo }}>
+    <TodoContext.Provider value={{ todos, addTodo, removeTodo, toggleStatus }}>
       <>{children}</>
     </TodoContext.Provider>
   );

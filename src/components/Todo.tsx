@@ -4,15 +4,24 @@ import { TodoContext } from "../contexts/todosContext";
 
 interface TodoProps {
     
-    todo: Todo;
-    key: number;
-    id: number;
+  todo: Todo;
+  key: number;
+  id: number;
 }
+
 
 
 const Todo: React.FC<TodoProps> = ({todo, id}, key) => {
 
-    const {removeTodo} = useContext(TodoContext);
+    const {removeTodo, toggleStatus} = useContext(TodoContext);
+
+
+    const handleToggle = (e: React.ChangeEvent<HTMLSelectElement>) => {
+
+      const newStatus = e.target.value;
+      toggleStatus(todo, id, newStatus);
+
+    }
 
 
     return (
@@ -22,6 +31,11 @@ const Todo: React.FC<TodoProps> = ({todo, id}, key) => {
             >
               <span style={{ flex: 1 }}>{todo.title}</span>
               <span style={{ flex: 1 }}>{todo.status}</span>
+              <select name="status" onChange={handleToggle}>
+                <option value={"Todo"}>Todo</option>
+                <option value={"Doing"}>Doing</option>
+                <option value={"Done"}>Done</option>
+              </select>
               <span
                 style={{ cursor: "pointer" }}
                 onClick={() => removeTodo(todo, id )}

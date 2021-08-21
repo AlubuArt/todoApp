@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import AddTodoComponent from "../components/AddTodoComponent";
 import Todo from "../components/Todo";
 import { TodoContext } from "../contexts/todosContext";
