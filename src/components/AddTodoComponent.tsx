@@ -7,7 +7,7 @@ import { TodoContext } from "../contexts/todosContext";
 const AddTodoComponent: React.FC = () => {
 
     const {addTodo} = useContext(TodoContext)
-    const [inputData, setInputData] = useState<Todo| {} >('')
+    const [inputData, setInputData] = useState('')
 
     const handleAddTodo = (e: React.FormEvent, inputData: Todo | any) => {
         e.preventDefault()
@@ -17,9 +17,7 @@ const AddTodoComponent: React.FC = () => {
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-            setInputData({
-                ...inputData,
-                [e.currentTarget.id]:e.currentTarget.value})  
+            setInputData(e.currentTarget.value)  
     }
 
     return (
