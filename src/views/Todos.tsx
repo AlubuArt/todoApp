@@ -4,23 +4,16 @@ import styles from './Todos.module.css';
 
 const Todos: React.FC = () => {
 
-    const {todos, addTodo } = useContext(TodoContext)
+    const {todos, addTodo, removeTodo } = useContext(TodoContext)
     const [inputData, setInputData] = useState<Todo| {} >('')
     
        
 
     const handleAddTodo = (e: React.FormEvent, inputData: Todo | any) => {
         e.preventDefault()
-        console.log(inputData)
         addTodo(inputData)
         setInputData('')
         
-        
-    
-    };
-
-    const removeTodo = (removeIndex: number) => {
-        //setTodos(todos.filter((_, index) => index !== removeIndex))
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -63,7 +56,7 @@ const Todos: React.FC = () => {
               <span style={{ flex: 1 }}>{todo.title}</span>
               <span
                 style={{ cursor: "pointer" }}
-                onClick={() => removeTodo(i)}
+                onClick={() => removeTodo(todo, i )}
               >
                 &times;
               </span>

@@ -2,14 +2,15 @@ import React, { useState } from "react";
 
 interface TodoContextInterface {
   todos: Todo[];
-  addTodo: (todo: Todo) => void
+  addTodo: (todo: Todo) => void;
+  removeTodo: (todo: Todo, index: number) => void;
 }
 
-//const initialValue = [{'todo1'}, {'todo2'}]
 
 export const TodoContext = React.createContext<TodoContextInterface>({
   todos: [{ title: "todo1" }, { title: "todo2" }],
-  addTodo: () => {}
+  addTodo: () => {}, 
+  removeTodo: () => {}
 });
 
 const TodoProvider: React.FC = ({ children }) => {
@@ -29,8 +30,12 @@ const TodoProvider: React.FC = ({ children }) => {
       setTodos([...todos, newTodo])
   };
 
+  const removeTodo = (todo: Todo, removeIndex: number) => {
+        setTodos(todos.filter((_, index) => index !== removeIndex))
+  }
+
   return (
-    <TodoContext.Provider value={{ todos, addTodo }}>
+    <TodoContext.Provider value={{ todos, addTodo, removeTodo }}>
       <>{children}</>
     </TodoContext.Provider>
   );
