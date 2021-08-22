@@ -4,7 +4,7 @@ import { TodoContext } from "../contexts/todosContext";
 
 const AddTodoComponent: React.FC = () => {
   const { addTodo } = useContext(TodoContext);
-  const [inputData, setInputData] = useState("");
+  const [inputData, setInputData] = useState<string>("");
 
   const handleAddTodo = (e: React.FormEvent, inputData: Todo | any) => {
     e.preventDefault();
