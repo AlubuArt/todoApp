@@ -5,13 +5,15 @@ export interface TodoContextInterface {
   addTodo: (title: string ) => void;
   removeTodo: (todo: Todo, index: number) => void;
   toggleStatus: (todo: Todo, index: number, status: string) => void
+  toggleDeadline: (todo: Todo, index: number, deadline: string) => void
 }
 
 export const TodoContext = React.createContext<TodoContextInterface>({
-  todos: [{ title: "todo1", status:'' }],
+  todos: [{ title: "todo1", status:'', deadline: new Date(), isDeadline: false }],
   addTodo: () => {}, 
   removeTodo: () => {},
-  toggleStatus: () => {}
+  toggleStatus: () => {},
+  toggleDeadline: () => {}
 });
 
 const TodoProvider: React.FC = ({ children }) => {
@@ -22,7 +24,9 @@ const TodoProvider: React.FC = ({ children }) => {
     console.log(title)
       const newTodo: Todo = {
           title: title,
-          status: "Todo"
+          status: "Todo",
+          deadline: false,
+          isDeadline: false
       }
       setTodos([...todos, newTodo])
   };
@@ -42,8 +46,12 @@ const TodoProvider: React.FC = ({ children }) => {
     
   }
 
+  const toggleDeadline = (todo: Todo, toggleIndex: number, deadline: string) => {
+      console.log(todo, toggleIndex, deadline)
+  }
+
   return (
-    <TodoContext.Provider value={{ todos, addTodo, removeTodo, toggleStatus }}>
+    <TodoContext.Provider value={{ todos, addTodo, removeTodo, toggleStatus, toggleDeadline }}>
       <>{children}</>
     </TodoContext.Provider>
   );

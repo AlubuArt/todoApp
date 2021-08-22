@@ -21,7 +21,7 @@ const Todos: React.FC = () => {
       <div>
         {todos.length === 0 && <IfNoTodo />}
         {todos.map((todo, i) => (
-          <Todo todo={todo} key={i} id={i} />
+          <Todo todo={todo} key={i} id={i} deadline={todo.deadline} isDeadline={todo.isDeadline}/>
         ))}
       </div>
     </div>
