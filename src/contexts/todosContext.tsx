@@ -57,7 +57,7 @@ const TodoProvider: React.FC = ({ children }) => {
   ) => {
     todos.filter((_, index) => {
       if (index === toggleIndex) {
-        todo.deadline = deadline.format('MMMM Do YYYY, h:mm:ss a');
+        todo.deadline = deadline.format("MMMM Do YYYY, h:mm:ss a");
         setTodos([...todos]);
       }
     });
