@@ -1,8 +1,8 @@
 interface Todo {
     title: string;
     status: string;
-    deadline: Date | boolean;
-    isDeadline: boolean
+    deadline: Date | Moment | boolean;
+    id: number;
 }
 
 interface Todos {

@@ -1,15 +1,17 @@
 import React, { useContext } from "react";
 import styles from "../views/Todos.module.css";
 import { TodoContext } from "../contexts/todosContext";
+import {Moment} from 'moment'
 import DateAndTimePicker from './DateAndTimePicker'
 
 interface TodoProps {
   todo: Todo;
   key: number;
   id: number;
-  isDeadline: boolean;
-  deadline: Date | boolean;
+  deadline: Date | Moment | boolean;
 }
+
+
 
 const Todo: React.FC<TodoProps> = ({ todo, id }, key) => {
   const { removeTodo, toggleStatus } = useContext(TodoContext);
@@ -18,6 +20,8 @@ const Todo: React.FC<TodoProps> = ({ todo, id }, key) => {
     const newStatus = e.target.value;
     toggleStatus(todo, id, newStatus);
   };
+
+ 
 
   return (
     <div key={key} className={styles.todo}>
@@ -28,7 +32,10 @@ const Todo: React.FC<TodoProps> = ({ todo, id }, key) => {
         <option value={"Doing"}>Doing</option>
         <option value={"Done"}>Done</option>
       </select>
-      <DateAndTimePicker />
+      <div>
+
+      <DateAndTimePicker todo={todo} id={id}/>
+      </div>
       <span style={{ cursor: "pointer" }} onClick={() => removeTodo(todo, id)}>
         &times;
       </span>
