@@ -9,7 +9,6 @@ import styles from "./Todos.module.css";
 
 const Todos: React.FC<Todos> = () => {
   const { todos } = useContext(TodoContext);
-  const [heading, setHeading] = useState<string>('Todo');
   const {view} = useContext(NavigationContext);
   const [selectedTodos, setSelectedTodos] = useState<Todo[]>([])
   
