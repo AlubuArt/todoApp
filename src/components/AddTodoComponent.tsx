@@ -1,10 +1,14 @@
 import React, { useContext, useState } from "react";
 import styles from "../views/Todos.module.css";
 import { TodoContext } from "../contexts/todosContext";
+import DateAndTimePicker from './DateAndTimePicker';
+
+
 
 const AddTodoComponent: React.FC = () => {
-  const { addTodo } = useContext(TodoContext);
+  const { addTodo, todo, id } = useContext(TodoContext);
   const [inputData, setInputData] = useState<string>("");
+  
 
   const handleAddTodo = (e: React.FormEvent, inputData: Todo | any) => {
     e.preventDefault();
@@ -15,6 +19,8 @@ const AddTodoComponent: React.FC = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputData(e.currentTarget.value);
   };
+
+ 
 
   return (
     <form
@@ -29,6 +35,7 @@ const AddTodoComponent: React.FC = () => {
         placeholder="Fix the thing.."
         className={styles.input}
       />
+      
       <button type="submit" className={styles.button}>
         Add
       </button>

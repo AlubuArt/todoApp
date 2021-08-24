@@ -1,16 +1,7 @@
-
-import TodoProvider from './contexts/todosContext';
-import Todos from './views/Todos';
-
+import AppLayout from "./components/AppLayout";
 
 function App() {
-  return (
-
-    
-      <Todos />
-    
-  )
-  
+  return <AppLayout />
 }
 
 export default App;
