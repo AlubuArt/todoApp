@@ -1,12 +1,11 @@
 import React, { useContext, useState } from "react";
-import styles from "../views/Todos.module.css";
+import styles from "../components/AddTodoComponent.module.css";
 import { TodoContext } from "../contexts/todosContext";
-import DateAndTimePicker from './DateAndTimePicker';
 
 
 
 const AddTodoComponent: React.FC = () => {
-  const { addTodo, todo, id } = useContext(TodoContext);
+  const { addTodo} = useContext(TodoContext);
   const [inputData, setInputData] = useState<string>("");
   
 
@@ -37,7 +36,7 @@ const AddTodoComponent: React.FC = () => {
       />
       
       <button type="submit" className={styles.button}>
-        Add
+        Add todo
       </button>
     </form>
   );

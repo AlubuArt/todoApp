@@ -1,5 +1,6 @@
 import React, {useContext} from "react";
 import { NavigationContext } from "../contexts/navigationContext";
+import styles from './Navigation.module.css';
 
 
 
@@ -10,10 +11,16 @@ const Navigation = () => {
 
     return (
 
-        <div>
-            <button onClick={() => toggleNavigation("Todo")}>Todo</button>
-            <button onClick={() => toggleNavigation("Doing")}>Doing</button>
-            <button onClick={() => toggleNavigation("Done")}>DOne</button>
+        <div className={styles.navigationContainer}>
+            <div className={styles.navigationTab}>
+                <button onClick={() => toggleNavigation("Todo")}>Todo</button>
+            </div>
+            <div className={styles.navigationTab}>
+                <button onClick={() => toggleNavigation("Doing")}>Doing</button>
+            </div>
+            <div className={styles.navigationTab}>
+                <button onClick={() => toggleNavigation("Done")}>Done</button>
+            </div>
         </div>
     )
 }

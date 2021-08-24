@@ -13,6 +13,7 @@ interface TodoProps {
 
 const Todo: React.FC<TodoProps> = ({ todo, id }, key) => {
   const { removeTodo, toggleStatus } = useContext(TodoContext);
+   
 
   const handleToggle = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newStatus = e.target.value;
@@ -23,7 +24,7 @@ const Todo: React.FC<TodoProps> = ({ todo, id }, key) => {
     <div key={key} className={styles.todo}>
       <span style={{ flex: 1 }}>{todo.title}</span>
       <span style={{ flex: 1 }}>{todo.status}</span>
-      <select name="status" onChange={handleToggle}>
+      <select defaultValue={todo.status} name="status" onChange={handleToggle}>
         <option value={"Todo"}>Todo</option>
         <option value={"Doing"}>Doing</option>
         <option value={"Done"}>Done</option>

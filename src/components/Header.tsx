@@ -1,12 +1,10 @@
-import React, {useContext} from "react";
-
-
+import styles from './Header.module.css';
 
 const Header = () => {
 
     return (
         
-    <div>
+    <div className={styles.headerContainer}>
         <h1>Get things done Application</h1>
     </div>
     )

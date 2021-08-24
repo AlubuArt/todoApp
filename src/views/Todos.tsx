@@ -22,7 +22,6 @@ const Todos: React.FC<Todos> = () => {
   };
 
   
-
   useEffect(() => {
     const selected = todos.filter(todo => todo.status === view)
     setSelectedTodos(selected);
