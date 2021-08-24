@@ -15,12 +15,14 @@ const Todos: React.FC<Todos> = () => {
   
 
 
-  const Heading = () => {
-    return <h2 style={{ textAlign: "center" }}>{heading}</h2>;
+  const Heading = () => {      
+    return <h2 style={{ textAlign: "center" }}>{view}</h2>;
   };
   const IfNoTodo = () => {
     return <div style={{ textAlign: "center" }}>Add some todos</div>;
   };
+
+  
 
   useEffect(() => {
     const selected = todos.filter(todo => todo.status === view)
