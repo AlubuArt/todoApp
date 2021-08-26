@@ -6,21 +6,4 @@
   padding: 8px;
 }
 
-.input {
-  display: inline-flex;
-  flex: 1px;
-  padding: 4px;
-  border: 1px solid #eaeaea;
-  margin-right: 4;
-}
 
-.button {
-  bordercolor: #eaeaea;
-  background-color: #fff;
-}
-
-.todo {
-  padding: 4px;
-  borderbottom: 1px solid #ccc;
-  display: flex;
-}

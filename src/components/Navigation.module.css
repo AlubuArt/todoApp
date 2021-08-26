@@ -1,0 +1,13 @@
+.navigationContainer {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+
+}
+
+.navigationTab {
+    display: flex;   
+
+}

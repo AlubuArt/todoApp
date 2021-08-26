@@ -1,0 +1,27 @@
+.todoContainer {
+    padding: 4px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+  }
+  
+
+  .todoTitle {
+      flex: 1;
+  }
+
+  .statusSelector {
+      margin: 5px;
+  }
+
+  .dateAndTimePicker {
+      margin: 5px
+  }
+
+  .deleteTodoButton {
+      margin: 5px;
+  }
+
+  h4 {
+      margin: 5px;
+      font-size: larger;
+  }

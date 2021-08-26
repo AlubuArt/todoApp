@@ -6,6 +6,7 @@ interface Todo {
 }
 
 interface Todos {
-    todos: [];
+    //todos: [];
+    //view: number
 }
 

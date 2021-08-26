@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import { Moment } from "moment";
+import Todo from "../components/Todo";
 
 export interface TodoContextInterface {
   todos: Todo[];
+  todo: Todo ;
+  id: number;
   addTodo: (title: string) => void;
   removeTodo: (todo: Todo, index: number) => void;
   toggleStatus: (todo: Todo, index: number, status: string) => void;
   toggleDeadline: (todo: Todo, index: number, deadline: Moment) => void;
 }
+
+
 
 export const TodoContext = React.createContext<TodoContextInterface>({
   todos: [
@@ -18,14 +23,27 @@ export const TodoContext = React.createContext<TodoContextInterface>({
       id: 1,
     },
   ],
+  
   addTodo: () => {},
   removeTodo: () => {},
   toggleStatus: () => {},
   toggleDeadline: () => {},
+  todo: {
+    title: "todo1",
+    status: "",
+    deadline: new Date(),
+    id: 1,
+  },
+  id: 1,
 });
 
 const TodoProvider: React.FC = ({ children }) => {
   const [todos, setTodos] = useState<Todo[]>([]);
+  const [todo] = useState<Todo>({title: 'string',
+    status: 'string',
+    deadline: true,
+    id: 2})
+  const id = 2
 
   const addTodo = (title: string) => {
     const newTodo: Todo = {
@@ -63,9 +81,10 @@ const TodoProvider: React.FC = ({ children }) => {
     });
   };
 
+  
   return (
     <TodoContext.Provider
-      value={{ todos, addTodo, removeTodo, toggleStatus, toggleDeadline }}
+      value={{ todos, addTodo, removeTodo, toggleStatus, toggleDeadline, todo, id}}
     >
       <>{children}</>
     </TodoContext.Provider>
