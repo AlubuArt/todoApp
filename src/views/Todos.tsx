@@ -2,15 +2,18 @@ import React, { useContext, useState, useEffect } from "react";
 import Todo from "../components/Todo";
 import { NavigationContext } from "../contexts/navigationContext";
 import { TodoContext } from "../contexts/todosContext";
+import { TodoCounterContext } from "../contexts/todosCounter";
 import styles from "./Todos.module.css";
 
 
 
 
-const Todos: React.FC<Todos> = () => {
+const Todos: React.FC = () => {
   const { todos } = useContext(TodoContext);
   const {view} = useContext(NavigationContext);
   const [selectedTodos, setSelectedTodos] = useState<Todo[]>([])
+  const {handleCount} = useContext(TodoCounterContext)
+    
   
 
 
@@ -25,6 +28,7 @@ const Todos: React.FC<Todos> = () => {
   useEffect(() => {
     const selected = todos.filter(todo => todo.status === view)
     setSelectedTodos(selected);
+    handleCount(todos);
     return () => {
       
     }
