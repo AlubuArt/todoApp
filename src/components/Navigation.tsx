@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import { NavigationContext } from "../contexts/navigationContext";
 import { TodoCounterContext } from "../contexts/counterContext";
 import styles from "./Navigation.module.css";
+import NavigationButton  from './NavigationButton';
+
+//TODO: refactor (make button into component)
 
 const Navigation: React.FC = () => {
   const { todoCount, doingCount, doneCount } = useContext(TodoCounterContext);
@@ -9,21 +12,9 @@ const Navigation: React.FC = () => {
 
   return (
     <div className={styles.navigationContainer}>
-      <div className={styles.navigationTab}>
-        <button onClick={() => toggleNavigation("Todo")}>
-          Todo {todoCount.length}
-        </button>
-      </div>
-      <div className={styles.navigationTab}>
-        <button onClick={() => toggleNavigation("Doing")}>
-          Doing {doingCount.length}
-        </button>
-      </div>
-      <div className={styles.navigationTab}>
-        <button onClick={() => toggleNavigation("Done")}>
-          Done {doneCount.length}
-        </button>
-      </div>
+      <NavigationButton name={"Todo"} toggleNavigation={toggleNavigation} count={todoCount.length}/>
+      <NavigationButton name={"Doing"} toggleNavigation={toggleNavigation} count={doingCount.length}/>
+      <NavigationButton name={"Done"} toggleNavigation={toggleNavigation} count={doneCount.length}/>
     </div>
   );
 };
