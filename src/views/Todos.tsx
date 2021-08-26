@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import Todo from "../components/Todo";
 import { NavigationContext } from "../contexts/navigationContext";
 import { TodoContext } from "../contexts/todosContext";
-import { TodoCounterContext } from "../contexts/todosCounter";
+import { TodoCounterContext } from "../contexts/counterContext";
 import styles from "./Todos.module.css";
 
 
@@ -28,11 +28,16 @@ const Todos: React.FC = () => {
   useEffect(() => {
     const selected = todos.filter(todo => todo.status === view)
     setSelectedTodos(selected);
-    handleCount(todos);
+   
     return () => {
       
     }
   }, [todos, view])
+
+  useEffect(() => {
+    handleCount(todos);
+  }, [todos])
+
 
   return (
     <div className={styles.todosContainer}>

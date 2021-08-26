@@ -5,7 +5,7 @@ import Navigation from './Navigation'
 import Todos from '../views/Todos';
 import NavigationProvider from '../contexts/navigationContext';
 import styles from './AppLayout.module.css';
-import TodoCounterProvider from '../contexts/todosCounter';
+import TodoCounterProvider from '../contexts/counterContext';
 
 
 const AppLayout = () => {
