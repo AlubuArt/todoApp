@@ -49,7 +49,7 @@ const TodoProvider: React.FC = ({ children }) => {
     const newTodo: Todo = {
       title: title,
       status: "Todo",
-      deadline: false,
+      deadline: 'Optional deadline',
       id: 1,
     };
     setTodos([...todos, newTodo]);
