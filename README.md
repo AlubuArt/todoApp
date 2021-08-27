@@ -6,6 +6,8 @@
 ![image](https://user-images.githubusercontent.com/57637214/130366126-a765e70b-71d0-4e5e-aac1-b775435f5b94.png)
 
 
+### Mock up design
+Skærmbillede 2021-08-27 kl. 17.20.30![Skærmbillede 2021-08-27 kl  17 20 30](https://user-images.githubusercontent.com/57637214/131151049-85717f2f-7440-48f6-a8eb-28d57f28cce7.png)
 
 
 
