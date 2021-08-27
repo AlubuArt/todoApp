@@ -7,7 +7,8 @@
 
 
 ### Mock up design
-Skærmbillede 2021-08-27 kl. 17.20.30![Skærmbillede 2021-08-27 kl  17 20 30](https://user-images.githubusercontent.com/57637214/131151049-85717f2f-7440-48f6-a8eb-28d57f28cce7.png)
+
+(https://user-images.githubusercontent.com/57637214/131151049-85717f2f-7440-48f6-a8eb-28d57f28cce7.png)
 
 
 
