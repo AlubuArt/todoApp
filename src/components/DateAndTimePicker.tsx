@@ -16,7 +16,7 @@ const DateAndTimePicker: React.FC<PickerProps> = ({ todo, id }) => {
     toggleDeadline(todo, id, value);
   };
  //TODO: fix date bug
-  return <Datetime onChange={handleChange} value={new Date(todo.deadline)}/>;
+  return <Datetime onChange={handleChange} initialValue={todo.deadline}/>;
 };
 
 export default DateAndTimePicker;
