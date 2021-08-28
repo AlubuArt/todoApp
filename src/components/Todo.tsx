@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import styles from "./Todo.module.css";
+import buttonStyles from './Buttons.module.css';
 import { TodoContext } from "../contexts/todosContext";
 import { Moment } from "moment";
 import DateAndTimePicker from "./DateAndTimePicker";
@@ -25,8 +26,8 @@ const Todo: React.FC<TodoProps> = ({ todo, id }, key) => {
       <div className={styles.todoTitle}>
         <h4>{todo.title}</h4>
       </div>
-      <div className={styles.statusSelector}>
-        <select defaultValue={todo.status} name="status" onChange={handleToggle}>
+      <div >
+        <select className={styles.statusSelector} defaultValue={todo.status} name="status" onChange={handleToggle}>
             <option value={"Todo"}>Todo</option>
             <option value={"Doing"}>Doing</option>
             <option value={"Done"}>Done</option>
@@ -35,8 +36,8 @@ const Todo: React.FC<TodoProps> = ({ todo, id }, key) => {
       <div className={styles.dateAndTimePicker}>
         <DateAndTimePicker todo={todo} id={id} />
       </div>
-      <div className={styles.deleteTodoButton}>
-        <button onClick={() => removeTodo(todo, id)}>Delete</button>
+      <div className={styles.deleteTodoButtonContainer}>
+        <button className={buttonStyles.buttonSecondary} onClick={() => removeTodo(todo, id)}>Delete</button>
       </div>
     </div>
   );

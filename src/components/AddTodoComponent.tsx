@@ -36,6 +36,7 @@ const AddTodoComponent: React.FC = () => {
           onChange={handleChange}
           placeholder="Fix the thing.."
           className={styles.input}
+          maxLength={25}
         />
         
         <button type="submit" className={buttonStyles.buttonPrimary}>

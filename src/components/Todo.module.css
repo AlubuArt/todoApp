@@ -3,7 +3,6 @@
     border-bottom: 1px solid #ccc;
     display: flex;
   }
-  
 
   .todoTitle {
       flex: 1;
@@ -11,17 +10,24 @@
 
   .statusSelector {
       margin: 5px;
+      border-radius: 3px;    
+        box-shadow: 1px 1px 4px#9f9b9b;
+        height: 21px;
+        padding: 0px;
+        
   }
 
   .dateAndTimePicker {
-      margin: 5px
+      margin: 5px;
+      border-radius: 5px;    
+      box-shadow: 1px 1px 4px#9f9b9b;
   }
 
-  .deleteTodoButton {
+  .deleteTodoButtonContainer {
       margin: 5px;
   }
 
   h4 {
       margin: 5px;
-      font-size: larger;
+      font-size: 14px;
   }
