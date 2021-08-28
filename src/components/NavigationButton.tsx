@@ -10,10 +10,11 @@ interface ButtonProps {
 const NavigationButton: React.FC<ButtonProps> = ({name, count, toggleNavigation}) => {
 
     return (
-        <div className={styles.navigationTab}>
-        <button onClick={() => toggleNavigation(name)}>
-          {name} {count}
-        </button>
+        <div  tabIndex={1} className={styles.navigationTab} onClick={() => toggleNavigation(name)}>
+          <h2>
+            {name} {count}
+          </h2>
+       
       </div>
     )
 
