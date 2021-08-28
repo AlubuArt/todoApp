@@ -22,9 +22,15 @@ const NavigationButton: React.FC<ButtonProps> = ({name, count, toggleNavigation}
 
     return (
         <div  style={{backgroundColor: boxColor}} className={styles.navigationTab} onClick={handleClick}>
-          <h2>
-            {name} {count}
-          </h2>
+          <div>
+           <h3>
+             {name}
+          </h3>
+          </div>
+          <div>
+            <h4> {count}</h4>
+          </div>
+          
        
       </div>
     )
