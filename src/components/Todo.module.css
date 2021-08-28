@@ -2,6 +2,8 @@
     padding: 4px;
     border-bottom: 1px solid #ccc;
     display: flex;
+
+    margin-right:  10px;
   }
 
   .todoTitle {
