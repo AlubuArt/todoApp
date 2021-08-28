@@ -1,13 +1,25 @@
-.input {
-    display: inline-flex;
-    flex: 1px;
-    padding: 4px;
-    border: 1px solid #eaeaea;
-    margin-right: 4;
+.addTodoContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  form {
+    display: flex;
+    width: 70%;
+    margin: 0px auto;
+
   }
   
-  .button {
-    border-color: #eaeaea;
-    background-color: #fff;
-    margin-left: 15px;
+  .input {
+    width: 242px;
+    padding: 4px;
+    border: 1px solid #eaeaea;
+    box-shadow: 1px 1px 4px#9f9b9b;
+    border-radius: 5px;  
+    
   }
+  
+  
+
+  
+

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import styles from "../components/AddTodoComponent.module.css";
+import buttonStyles from '../components/Buttons.module.css';
 import { TodoContext } from "../contexts/todosContext";
 
 
@@ -22,23 +23,26 @@ const AddTodoComponent: React.FC = () => {
  
 
   return (
-    <form
-      onSubmit={(e) => handleAddTodo(e, inputData)}
-      style={{ display: "flex", marginBottom: 8 }}
-    >
-      <input
-        value={inputData}
-        type="text"
-        id="title"
-        onChange={handleChange}
-        placeholder="Fix the thing.."
-        className={styles.input}
-      />
-      
-      <button type="submit" className={styles.button}>
-        Add todo
-      </button>
-    </form>
+    <div className={styles.addTodoContainer}>
+    
+      <form
+        onSubmit={(e) => handleAddTodo(e, inputData)}
+        style={{ display: "flex", marginBottom: 8 }}
+      >
+        <input
+          value={inputData}
+          type="text"
+          id="title"
+          onChange={handleChange}
+          placeholder="Fix the thing.."
+          className={styles.input}
+        />
+        
+        <button type="submit" className={buttonStyles.buttonPrimary}>
+          Add todo
+        </button>
+      </form>
+    </div>
   );
 };
 
