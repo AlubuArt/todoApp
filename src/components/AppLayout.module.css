@@ -3,6 +3,7 @@
     flex-direction: column;
     max-width: 500px;
     margin: 5px auto;
-    padding: 8px;
+    border: 1px solid;
+    min-height: 600px;
 
 }
