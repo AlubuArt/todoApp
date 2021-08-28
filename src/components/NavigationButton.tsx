@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, {useState}  from 'react';
 import styles from "./Navigation.module.css";
 
 interface ButtonProps {
@@ -9,8 +9,19 @@ interface ButtonProps {
 
 const NavigationButton: React.FC<ButtonProps> = ({name, count, toggleNavigation}) => {
 
+  const [boxColor, setBoxColor] = useState("white")
+
+    const handleClick = () => {
+      toggleNavigation(name);
+      toggleBoxColor()
+    }
+
+    const toggleBoxColor = () => {
+        setBoxColor("orange")
+    }
+
     return (
-        <div  tabIndex={1} className={styles.navigationTab} onClick={() => toggleNavigation(name)}>
+        <div  style={{backgroundColor: boxColor}} className={styles.navigationTab} onClick={handleClick}>
           <h2>
             {name} {count}
           </h2>
