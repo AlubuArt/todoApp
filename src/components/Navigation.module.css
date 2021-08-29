@@ -3,18 +3,43 @@
     flex-direction: row;
     width: 500px;
     justify-content: space-evenly;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+
 
 }
 
 .navigationTab {
     display: flex;   
+    cursor: pointer;
+    border: grey solid 0.1px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 
 }
 
-p {
-    margin-bottom: 0px;
-    margin-top: 0px;
-    margin-left: 10px;
 
+.inActive {
+    display: flex;   
+    cursor: pointer;
+    border: grey solid 0.1px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+
+.active {
+    display: flex;   
+    cursor: pointer;
+    border: grey solid 0.1px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: orange;
+}
+
+h3 {
+    margin: 10px;
 }

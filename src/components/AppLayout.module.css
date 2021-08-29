@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     max-width: 500px;
-    margin: 0px auto;
-    padding: 8px;
+    margin: 5px auto;
+    border: 1px solid;
+    min-height: 600px;
 
 }

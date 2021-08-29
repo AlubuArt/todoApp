@@ -1,5 +1,19 @@
 .headerContainer {
     display: flex;
     margin: 0px auto;
+    background-color: #263238 ;
+    width: 100%;
+    
+}
+
+.titleContainer {
+    margin: auto;
+
+}
+
+h1 {
+    color: white;
+    margin: 15px;
+    font-size: 24px;
     
 }

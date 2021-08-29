@@ -18,8 +18,13 @@ const Todos: React.FC = () => {
 
 
   const Heading = () => {      
-    return <h2 style={{ textAlign: "center" }}>{view}</h2>;
-  };
+
+    return (
+    <div className={styles.todosHeading}>
+       <h2 style={{ textAlign: "center" }}>{view}</h2>
+    </div>
+   
+    )};
   const IfNoTodo = () => {
     return <div style={{ textAlign: "center" }}>Add some todos</div>;
   };
