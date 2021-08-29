@@ -8,7 +8,7 @@ import NavigationButton  from './NavigationButton';
 
 const Navigation: React.FC = () => {
   const { todoCount, doingCount, doneCount } = useContext(TodoCounterContext);
-  const { toggleNavigation, view} = useContext(NavigationContext);
+  const { toggleNavigation} = useContext(NavigationContext);
   
   return (
     <div className={styles.navigationContainer}>

@@ -2,11 +2,5 @@ interface Todo {
     title: string;
     status: string;
     deadline: Date | Moment | boolean;
-    id: number;
+    id: string;
 }
-
-interface Todos {
-    //todos: [];
-    //view: number
-}
-

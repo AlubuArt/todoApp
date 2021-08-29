@@ -1,4 +1,3 @@
-import React, {useContext, useState} from 'react';
 import AddTodoComponent from './AddTodoComponent';
 import Header  from './Header';
 import Navigation from './Navigation'
@@ -9,10 +8,6 @@ import TodoCounterProvider from '../contexts/counterContext';
 
 
 const AppLayout = () => {
-
-
-    
-    
 
     return (
         <NavigationProvider >
