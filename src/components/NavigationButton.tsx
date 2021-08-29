@@ -16,6 +16,8 @@ const NavigationButton: React.FC<ButtonProps> = ({name, count, toggleNavigation}
 
     const {view} = useContext(NavigationContext);
     const [classN, setClassN] = useState('inActive');
+    
+    //use dynamic className
     let className = cx(classN)
 
     const handleClick = () => {
