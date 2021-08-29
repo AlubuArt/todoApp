@@ -2,12 +2,15 @@
     padding: 4px;
     border-bottom: 1px solid #ccc;
     display: flex;
-
+    justify-content: center;
+    align-items: center;
     margin-right:  10px;
   }
 
   .todoTitle {
       flex: 1;
+      text-align: center;
+      
   }
 
   .statusSelector {
@@ -23,6 +26,7 @@
       margin: 5px;
       border-radius: 5px;    
       box-shadow: 1px 1px 4px#9f9b9b;
+      height: 100%;
   }
 
   .deleteTodoButtonContainer {
@@ -32,4 +36,5 @@
   h4 {
       margin: 5px;
       font-size: 14px;
+      justify-self: center;
   }

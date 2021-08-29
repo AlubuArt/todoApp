@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import { NavigationContext } from "../contexts/navigationContext";
 import { TodoCounterContext } from "../contexts/counterContext";
 import styles from "./Navigation.module.css";
@@ -8,8 +8,8 @@ import NavigationButton  from './NavigationButton';
 
 const Navigation: React.FC = () => {
   const { todoCount, doingCount, doneCount } = useContext(TodoCounterContext);
-  const { toggleNavigation } = useContext(NavigationContext);
-
+  const { toggleNavigation, view} = useContext(NavigationContext);
+  
   return (
     <div className={styles.navigationContainer}>
       <NavigationButton name={"Todo"} toggleNavigation={toggleNavigation} count={todoCount.length}/>

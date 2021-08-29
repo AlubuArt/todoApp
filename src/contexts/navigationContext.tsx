@@ -5,12 +5,10 @@ export interface NavigationContextInterface {
     toggleNavigation: (view: string) => void;
 }
 
-
 export const NavigationContext = createContext<NavigationContextInterface>({
     view: "Todo",
     toggleNavigation: () => {},
 });
-
 
 const NavigationProvider: React.FC = ({children}) => {
     const [view, setView] = useState<string>("Todo");

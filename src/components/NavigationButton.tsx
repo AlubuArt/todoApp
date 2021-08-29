@@ -1,27 +1,38 @@
-import React, {useState}  from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { NavigationContext } from '../contexts/navigationContext';
 import styles from "./Navigation.module.css";
+import classNames from 'classnames/bind';
 
 interface ButtonProps {
     toggleNavigation: (view: string) => void;
     count: number;
-    name: string
+    name: string;
 }
+
+//make dynamic className
+let cx = classNames.bind(styles);
 
 const NavigationButton: React.FC<ButtonProps> = ({name, count, toggleNavigation}) => {
 
-  const [boxColor, setBoxColor] = useState("white")
+    const {view} = useContext(NavigationContext);
+    const [classN, setClassN] = useState('inActive');
+    let className = cx(classN)
 
     const handleClick = () => {
-      toggleNavigation(name);
-      toggleBoxColor()
+    toggleNavigation(name);
     }
 
-    const toggleBoxColor = () => {
-        setBoxColor("orange")
-    }
+    useEffect(() => {
+      if(view === name) {
+        setClassN("active")
+      } else (
+        setClassN("inActive")
+      )
+    }, [view, name])
 
+  
     return (
-        <div  style={{backgroundColor: boxColor}} className={styles.navigationTab} onClick={handleClick}>
+        <div className={className} onClick={handleClick}>
           <div>
            <h3>
              {name}
@@ -29,9 +40,7 @@ const NavigationButton: React.FC<ButtonProps> = ({name, count, toggleNavigation}
           </div>
           <div>
             <h4> {count}</h4>
-          </div>
-          
-       
+          </div>      
       </div>
     )
 
