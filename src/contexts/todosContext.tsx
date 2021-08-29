@@ -1,90 +1,72 @@
 import React, { useState } from "react";
 import { Moment } from "moment";
-import Todo from "../components/Todo";
 
 export interface TodoContextInterface {
   todos: Todo[];
   todo: Todo ;
-  id: number;
-  addTodo: (title: string) => void;
-  removeTodo: (todo: Todo, index: number) => void;
-  toggleStatus: (todo: Todo, index: number, status: string) => void;
-  toggleDeadline: (todo: Todo, index: number, deadline: Moment) => void;
+  addTodo: (title: string, todoID: string) => void;
+  removeTodo: (id: string) => void;
+  toggleStatus: (todoID: string, status: string) => void;
+  toggleDeadline: (todoID: string, deadline: Moment) => void;
 }
 
-
-
 export const TodoContext = React.createContext<TodoContextInterface>({
-  todos: [
-    {
-      title: "todo1",
-      status: "",
-      deadline: new Date(),
-      id: 1,
-    },
-  ],
-  
+  todos: [],
+  todo: {
+    title: "",
+    status: "",
+    deadline: '',
+    id: '',
+  },
   addTodo: () => {},
   removeTodo: () => {},
   toggleStatus: () => {},
   toggleDeadline: () => {},
-  todo: {
-    title: "todo1",
-    status: "",
-    deadline: new Date(),
-    id: 1,
-  },
-  id: 1,
 });
 
 const TodoProvider: React.FC = ({ children }) => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [todo] = useState<Todo>({title: 'string',
-    status: 'string',
-    deadline: true,
-    id: 2})
-  const id = 2
-
-  const addTodo = (title: string) => {
+  const [todo] = useState<Todo>({title: '',
+    status: '',
+    deadline: '',
+    id: ''})
+  
+  const addTodo = (title: string, todoID: string) => {
     const newTodo: Todo = {
       title: title,
       status: "Todo",
-      deadline: 'Optional deadline',
-      id: 1,
+      deadline: 'Set deadline?' ,
+      id: todoID,
     };
     setTodos([...todos, newTodo]);
   };
 
-  const removeTodo = (todo: Todo, removeIndex: number) => {
-    setTodos(todos.filter((_, index) => index !== removeIndex));
+  const removeTodo = (id: string) => {
+    setTodos(todos.filter( todo => todo.id !== id));
   };
 
-  const toggleStatus = (todo: Todo, toggleIndex: number, status: string) => {
-    todos.filter((_, index) => {
-      if (index === toggleIndex) {
+  const toggleStatus = (todoID: string, status: string) => {
+    todos.filter((todo) => {
+      if (todo.id === todoID) {
         todo.status = status;
-        setTodos([...todos]);
+        
       }
-    });
+    }); 
+     setTodos([...todos]);
   };
 
-  const toggleDeadline = (
-    todo: Todo,
-    toggleIndex: number,
-    deadline: Moment
-  ) => {
-    todos.filter((_, index) => {
-      if (index === toggleIndex) {
+  const toggleDeadline = (todoID: string, deadline: Moment) => {
+    todos.filter((todo) => {
+      if (todo.id === todoID) {
         todo.deadline = deadline.format("MMMM Do YYYY, h:mm:ss a");
-        setTodos([...todos]);
       }
     });
+     setTodos([...todos]);
   };
 
-  
   return (
     <TodoContext.Provider
-      value={{ todos, addTodo, removeTodo, toggleStatus, toggleDeadline, todo, id}}
+      value={{ todos, addTodo, removeTodo, toggleStatus, toggleDeadline, todo}}
     >
       <>{children}</>
     </TodoContext.Provider>

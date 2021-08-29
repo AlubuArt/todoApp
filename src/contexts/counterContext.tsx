@@ -12,7 +12,7 @@ export const TodoCounterContext = createContext<TodoCounterInterface>({
   todoCount: [],
   doingCount: [],
   doneCount: [],
-  handleCount: () => [],
+  handleCount: () => {},
 });
 
 const TodoCounterProvider: React.FC = ({ children }) => {
