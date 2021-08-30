@@ -17,7 +17,7 @@ const DateAndTimePicker: React.FC<PickerProps> = ({todo}) => {
   };
  //TODO: fixed the date bug ( what a hassle this was, please see SO answer: https://stackoverflow.com/questions/46053202/how-to-clear-the-value-entered-in-react-datetime)
   return (
-    <Datetime onChange={handleChange}  value={todo.deadline} renderInput={(props) => { return <input {...props} value={(todo.deadline)} />}}/>
+    <Datetime onChange={handleChange} renderInput={(props) => { return <input {...props} value={(todo.deadline)} />}}/>
   );
 };
 
