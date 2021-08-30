@@ -2,8 +2,7 @@
 This is project is build with React and Typescript and a dash of css.
 
 #### It utilize:
-React-datetime for handling the date and time picker (https://www.npmjs.com/package/react-datetime).\
-
+Markup : * React-datetime for handling the date and time picker (https://www.npmjs.com/package/react-datetime).\
 Legacy MomentJS for handling parsing of the date (https://momentjs.com/).\
 Classnames for dynamic classnames (https://www.npmjs.com/package/classnames).\
 And css modules
