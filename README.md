@@ -1,6 +1,24 @@
 # Get things done application
+This is project is build with React and Typescript and a dash of css.
 
+#### It utilize:
+React-datetime for handling the date and time picker (https://www.npmjs.com/package/react-datetime)
+Legacy MomentJS for handling parsing of the date (https://momentjs.com/).
+Classnames for dynamic classnames (https://www.npmjs.com/package/classnames)
+And css modules
 
+### Functionality
+Add todos, with a title, a status and optional deadline, to a list of todos.
+Toogle status and deadline of each todo.
+See lists of todos with each status: "todo", "doing" and "done".
+Delete todos.
+
+#### Backlog items
+See list of todos prioritized by deadline
+Add a noSQL database (Firebase/MongeDB) to store the todos.
+Add user signup and login
+Make design responsive
+ 
 
 ### Simple wireframes
 ![image](https://user-images.githubusercontent.com/57637214/130366126-a765e70b-71d0-4e5e-aac1-b775435f5b94.png)
@@ -10,7 +28,6 @@
 
 ![image](https://user-images.githubusercontent.com/57637214/131152242-061bafc9-76ca-440e-b33b-27ec1655f66d.png)
 
-# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
