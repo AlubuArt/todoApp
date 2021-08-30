@@ -11,7 +11,7 @@ This is project is build with React and Typescript and a dash of css.
 * Add todos, with a title, a status and optional deadline, to a list of todos.
 * Toogle status and deadline of each todo.
 * See lists of todos with each status: "todo", "doing" and "done".
-* Delete todos.\
+* Delete todos.
 
 #### Backlog items
 * See list of todos prioritized by deadline.
