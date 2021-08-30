@@ -7,7 +7,7 @@ export interface TodoContextInterface {
   addTodo: (title: string, todoID: string) => void;
   removeTodo: (id: string) => void;
   toggleStatus: (todoID: string, status: string) => void;
-  toggleDeadline: (todoID: string, deadline: Moment) => void;
+  toggleDeadline: (todoID: string, deadline: string | Moment) => void;
 }
 
 export const TodoContext = React.createContext<TodoContextInterface>({
@@ -55,10 +55,10 @@ const TodoProvider: React.FC = ({ children }) => {
      setTodos([...todos]);
   };
 
-  const toggleDeadline = (todoID: string, deadline: Moment) => {
+  const toggleDeadline = (todoID: string, deadline: string | Moment) => {
     todos.filter((todo) => {
       if (todo.id === todoID) {
-        todo.deadline = deadline.format("MMMM Do YYYY, h:mm:ss a");
+        todo.deadline = deadline.toString()
       }
     });
      setTodos([...todos]);
