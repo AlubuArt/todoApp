@@ -2,22 +2,23 @@
 This is project is build with React and Typescript and a dash of css.
 
 #### It utilize:
-React-datetime for handling the date and time picker (https://www.npmjs.com/package/react-datetime)
-Legacy MomentJS for handling parsing of the date (https://momentjs.com/).
-Classnames for dynamic classnames (https://www.npmjs.com/package/classnames)
+React-datetime for handling the date and time picker (https://www.npmjs.com/package/react-datetime).\
+
+Legacy MomentJS for handling parsing of the date (https://momentjs.com/).\
+Classnames for dynamic classnames (https://www.npmjs.com/package/classnames).\
 And css modules
 
 ### Functionality
-Add todos, with a title, a status and optional deadline, to a list of todos.
-Toogle status and deadline of each todo.
-See lists of todos with each status: "todo", "doing" and "done".
-Delete todos.
+Add todos, with a title, a status and optional deadline, to a list of todos.\
+Toogle status and deadline of each todo.\
+See lists of todos with each status: "todo", "doing" and "done".\
+Delete todos.\
 
 #### Backlog items
-See list of todos prioritized by deadline
-Add a noSQL database (Firebase/MongeDB) to store the todos.
-Add user signup and login
-Make design responsive
+See list of todos prioritized by deadline.\
+Add a noSQL database (Firebase/MongeDB) to store the todos.\
+Add user signup and login.\
+Make design responsive.\
  
 
 ### Simple wireframes
