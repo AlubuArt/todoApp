@@ -1,10 +1,69 @@
+
+
+
 .todoContainer {
-    padding: 4px;
+    border-bottom: 1px solid #ccc;
+    justify-content: center;
+    align-items: center;
+    max-width:450px;
+  }
+
+  .todoTitle {
+      flex: 1;
+      text-align: center;
+      margin: 0 auto;
+      
+  }
+
+  .statusSelectorContainer {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .statusSelector {
+      margin: 5px;
+      border-radius: 3px;    
+        box-shadow: 1px 1px 4px#9f9b9b;
+        height: 21px;
+        padding: 0px;
+        margin: 0 auto;
+  }
+
+  .dateAndTimePicker {
+    margin: 5px;
+    border-radius: 5px;    
+    box-shadow: 1px 1px 4px#9f9b9b;
+    height: 100%;
+    max-width: 153px;
+    margin: 0 auto;
+  }
+
+  .deleteTodoButtonContainer {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+  }
+
+  h4 {
+      margin: 5px;
+      font-size: 22px;
+      justify-self: center;
+  }
+
+
+
+@media only screen and (min-width: 1200px) {
+
+.todoContainer {
+    padding-right: 24px;
     border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right:  10px;
+    max-width:450px;
   }
 
   .todoTitle {
@@ -38,3 +97,5 @@
       font-size: 14px;
       justify-self: center;
   }
+
+}

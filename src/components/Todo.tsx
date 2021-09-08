@@ -23,7 +23,7 @@ const Todo: React.FC<TodoProps> = ({ todo }, key) => {
       <div className={styles.todoTitle}>
         <h4>{todo.title}</h4>
       </div>
-      <div >
+      <div className={styles.statusSelectorContainer} >
         <select className={styles.statusSelector} value={todo.status} name="status" onChange={handleToggle}>
             <option value={"Todo"}>Todo</option>
             <option value={"Doing"}>Doing</option>
