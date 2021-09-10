@@ -10,8 +10,14 @@ const AddTodoComponent: React.FC = () => {
 
   const handleAddTodo = (e: React.FormEvent, inputData: Todo | any) => {
     e.preventDefault();
-    addTodo(inputData, uuidv4());
-    setInputData("");
+    if (inputData === "") {
+      alert("Please input a todo.")
+     
+    } else {
+      addTodo(inputData, uuidv4());
+      setInputData("");
+    }
+    
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
