@@ -1,45 +1,40 @@
 .navigationContainer {
-    display: flex;
-    flex-direction: row;
-    max-width: 500px;
-    justify-content: space-evenly;
-    margin-bottom: 10px;
-
-
+  display: flex;
+  flex-direction: row;
+  max-width: 500px;
+  justify-content: space-evenly;
+  margin-bottom: 10px;
 }
 
 .navigationTab {
-    display: flex;   
-    cursor: pointer;
-    border: grey solid 0.1px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-
+  display: flex;
+  cursor: pointer;
+  border: grey solid 0.1px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .inActive {
-    display: flex;   
-    cursor: pointer;
-    border: grey solid 0.1px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
+  display: flex;
+  cursor: pointer;
+  border: grey solid 0.1px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
 }
 
-
 .active {
-    display: flex;   
-    cursor: pointer;
-    border: grey solid 0.1px;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: orange;
+  display: flex;
+  cursor: pointer;
+  border: grey solid 0.1px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: orange;
 }
 
 h3 {
-    margin: 10px;
+  margin: 10px;
 }

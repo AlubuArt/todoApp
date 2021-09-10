@@ -1,56 +1,49 @@
-
 .buttonPrimary {
-    width: 100%;
-    height: 25px;
-    background-color: #FFA000;
-    margin-left: 10px;
-    border-radius: 5px;    
-    box-shadow: 1px 1px 4px#9f9b9b;
-    max-width: 70px;
-    min-width: 25px;
-    cursor: pointer;
+  width: 100%;
+  height: 25px;
+  background-color: #ffa000;
+  margin-left: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px#9f9b9b;
+  max-width: 70px;
+  min-width: 25px;
+  cursor: pointer;
 }
 
 .buttonSecondary {
-    width: 100%;
-    height: 25px;
-    background-color: #E8E2E2;
-    margin-left: 10px;
-    border-radius: 5px; 
-    box-shadow: 1px 1px 4px#9f9b9b;
-    max-width: 70px;
-    min-width: 25px;
-    cursor: pointer;
+  width: 100%;
+  height: 25px;
+  background-color: #e8e2e2;
+  margin-left: 10px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px#9f9b9b;
+  max-width: 70px;
+  min-width: 25px;
+  cursor: pointer;
 }
-
-
 
 @media only screen and (min-width: 1200px) {
-    
-
-
-.buttonPrimary {
+  .buttonPrimary {
     width: 100%;
     height: 25px;
-    background-color: #FFA000;
+    background-color: #ffa000;
     margin-left: 10px;
-    border-radius: 5px;    
+    border-radius: 5px;
     box-shadow: 1px 1px 4px#9f9b9b;
     max-width: 70px;
     min-width: 25px;
     cursor: pointer;
-}
+  }
 
-.buttonSecondary {
+  .buttonSecondary {
     width: 100%;
     height: 25px;
-    background-color: #E8E2E2;
+    background-color: #e8e2e2;
     margin-left: 10px;
-    border-radius: 5px; 
+    border-radius: 5px;
     box-shadow: 1px 1px 4px#9f9b9b;
     max-width: 70px;
     min-width: 25px;
     cursor: pointer;
-}
-
+  }
 }

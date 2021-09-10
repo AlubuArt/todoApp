@@ -1,17 +1,10 @@
-
-
-
-    .appLayoutContainer {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 500px;
-        margin: 0px auto;
-        border: 1px solid;
-        min-height: 667px;
-        height: 100%;
-    
-    }
-    
-
-
+.appLayoutContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  margin: 0px auto;
+  border: 1px solid;
+  min-height: 667px;
+  height: 100%;
+}

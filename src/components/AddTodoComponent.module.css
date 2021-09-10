@@ -1,26 +1,18 @@
 .addTodoContainer {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
-  form {
-    display: flex;
-    width: 70%;
-    margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+form {
+  display: flex;
+  width: 70%;
+  margin: 0px auto;
+}
 
-  }
-  
-  .input {
-    width: 242px;
-    padding: 4px;
-    border: 1px solid #eaeaea;
-    box-shadow: 1px 1px 4px#9f9b9b;
-    border-radius: 5px;  
-    
-    
-  }
-  
-  
-
-  
-
+.input {
+  width: 242px;
+  padding: 4px;
+  border: 1px solid #eaeaea;
+  box-shadow: 1px 1px 4px#9f9b9b;
+  border-radius: 5px;
+}
