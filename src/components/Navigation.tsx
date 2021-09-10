@@ -1,14 +1,25 @@
-import React, { useContext} from "react";
+import React, { useContext, useState, useEffect} from "react";
 import { NavigationContext } from "../contexts/navigationContext";
-import { TodoCounterContext } from "../contexts/counterContext";
 import styles from "./Navigation.module.css";
 import NavigationButton  from './NavigationButton';
+import { TodoContext } from "../contexts/todosContext";
 
-//TODO: refactor (make button into component)
 
 const Navigation: React.FC = () => {
-  const { todoCount, doingCount, doneCount } = useContext(TodoCounterContext);
   const { toggleNavigation} = useContext(NavigationContext);
+  const [ todoCount, setTodoCount] = useState<Todo[]>([])
+  const [ doingCount, setDoingCount ] = useState<Todo[]>([])
+  const [ doneCount, setDoneCount] = useState<Todo[]>([]);
+  const { todos } = useContext(TodoContext);
+
+  useEffect(() => {
+    const todosCount = (todos: Todo[]) => {
+    setTodoCount(todos.filter(todos => todos.status === "Todo"))
+    setDoingCount(todos.filter(todos => todos.status === "Doing"))
+    setDoneCount(todos.filter(todos => todos.status === "Done"))
+  }
+    todosCount(todos)
+  }, [todos])
   
   return (
     <div className={styles.navigationContainer}>

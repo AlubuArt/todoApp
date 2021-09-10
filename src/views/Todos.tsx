@@ -2,14 +2,12 @@ import React, { useContext, useState, useEffect } from "react";
 import Todo from "../components/Todo";
 import { NavigationContext } from "../contexts/navigationContext";
 import { TodoContext } from "../contexts/todosContext";
-import { TodoCounterContext } from "../contexts/counterContext";
 import styles from "./Todos.module.css";
 
 const Todos: React.FC = () => {
   const { todos } = useContext(TodoContext);
   const { view } = useContext(NavigationContext);
   const [selectedTodos, setSelectedTodos] = useState<Todo[]>([]);
-  const { handleCount } = useContext(TodoCounterContext);
 
   const Heading = () => {
     return (
@@ -26,11 +24,6 @@ const Todos: React.FC = () => {
     const selected = todos.filter((todo) => todo.status === view);
     setSelectedTodos(selected);
   }, [todos, view]);
-
-  useEffect(() => {
-    handleCount(todos);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [todos]);
 
   return (
     <div className={styles.todosContainer}>
