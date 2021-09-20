@@ -12,13 +12,13 @@ interface ButtonProps {
 //make dynamic className
 let cx = classNames.bind(styles);
 
-const NavigationButton: React.FC<ButtonProps> = ({name, count, toggleNavigation}) => {
+const NavigationButton: React.FC<ButtonProps> = ({ name, count, toggleNavigation }) => {
 
-    const {view} = useContext(NavigationContext);
-    const [classN, setClassN] = useState('inActive');
+    const { view } = useContext(NavigationContext);
+    const [dynamicClass, setDynamicClass] = useState('inActive');
     
     //use dynamic className
-    let className = cx(classN)
+    let className = cx(dynamicClass)
 
     const handleClick = () => {
     toggleNavigation(name);
@@ -26,9 +26,9 @@ const NavigationButton: React.FC<ButtonProps> = ({name, count, toggleNavigation}
 
     useEffect(() => {
       if(view === name) {
-        setClassN("active")
+        setDynamicClass("active")
       } else (
-        setClassN("inActive")
+        setDynamicClass("inActive")
       )
     }, [view, name])
 
