@@ -6,17 +6,18 @@ import { TodoContext } from "../contexts/todosContext";
 
 
 const Navigation: React.FC = () => {
-  const { toggleNavigation} = useContext(NavigationContext);
-  const [ todoCount, setTodoCount] = useState<Todo[]>([])
-  const [ doingCount, setDoingCount ] = useState<Todo[]>([])
-  const [ doneCount, setDoneCount] = useState<Todo[]>([]);
+  const { toggleNavigation } = useContext(NavigationContext);
+  const [todoCount, setTodoCount] = useState<Todo[]>([])
+  const [doingCount, setDoingCount] = useState<Todo[]>([])
+  const [doneCount, setDoneCount] = useState<Todo[]>([]);
   const { todos } = useContext(TodoContext);
 
   useEffect(() => {
+    
     const todosCount = (todos: Todo[]) => {
-    setTodoCount(todos.filter(todos => todos.status === "Todo"))
-    setDoingCount(todos.filter(todos => todos.status === "Doing"))
-    setDoneCount(todos.filter(todos => todos.status === "Done"))
+      setTodoCount(todos.filter(todos => todos.status === "Todo"))
+      setDoingCount(todos.filter(todos => todos.status === "Doing"))
+      setDoneCount(todos.filter(todos => todos.status === "Done"))
   }
     todosCount(todos)
   }, [todos])

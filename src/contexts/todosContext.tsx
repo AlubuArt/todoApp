@@ -3,7 +3,7 @@ import { Moment } from "moment";
 
 export interface TodoContextInterface {
   todos: Todo[];
-  todo: Todo ;
+  todo: Todo;
   addTodo: (title: string, todoID: string) => void;
   removeTodo: (id: string) => void;
   toggleStatus: (todoID: string, status: string) => void;
@@ -15,8 +15,8 @@ export const TodoContext = React.createContext<TodoContextInterface>({
   todo: {
     title: "",
     status: "",
-    deadline: '',
-    id: '',
+    deadline: "",
+    id: "",
   },
   addTodo: () => {},
   removeTodo: () => {},
@@ -26,47 +26,48 @@ export const TodoContext = React.createContext<TodoContextInterface>({
 
 const TodoProvider: React.FC = ({ children }) => {
   const [todos, setTodos] = useState<Todo[]>([]);
-  const [todo] = useState<Todo>({title: '',
-    status: '',
-    deadline: '',
-    id: ''})
-  
+  const [todo] = useState<Todo>({
+    title: "",
+    status: "",
+    deadline: "",
+    id: "",
+  });
+
   const addTodo = (title: string, todoID: string) => {
     const newTodo: Todo = {
       title: title,
       status: "Todo",
-      deadline: 'Set deadline?' ,
+      deadline: "Set deadline?",
       id: todoID,
     };
     setTodos([...todos, newTodo]);
   };
 
   const removeTodo = (id: string) => {
-    setTodos(todos.filter( todo => todo.id !== id));
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   const toggleStatus = (todoID: string, status: string) => {
-    todos.filter((todo) => {
+    todos.forEach((todo) => {
       if (todo.id === todoID) {
         todo.status = status;
-        
       }
-    }); 
-     setTodos([...todos]);
+    });
+    setTodos([...todos]);
   };
 
   const toggleDeadline = (todoID: string, deadline: string | Moment) => {
-    todos.filter((todo) => {
+    todos.forEach((todo) => {
       if (todo.id === todoID) {
-        todo.deadline = deadline.toString()
+        todo.deadline = deadline.toString();
       }
     });
-     setTodos([...todos]);
+    setTodos([...todos]);
   };
 
   return (
     <TodoContext.Provider
-      value={{ todos, addTodo, removeTodo, toggleStatus, toggleDeadline, todo}}
+      value={{ todos, addTodo, removeTodo, toggleStatus, toggleDeadline, todo }}
     >
       <>{children}</>
     </TodoContext.Provider>
