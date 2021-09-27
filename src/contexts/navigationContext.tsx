@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
 
-export interface NavigationContextInterface {
+interface NavigationContextInterface {
   view: string;
   toggleNavigation: (view: string) => void;
 }

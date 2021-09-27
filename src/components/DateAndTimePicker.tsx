@@ -4,11 +4,11 @@ import "react-datetime/css/react-datetime.css";
 import { TodoContext } from "../contexts/todosContext";
 import { Moment } from "moment";
 
-interface PickerProps {
+interface TimePickerProps {
   todo: Todo;
 }
 
-const DateAndTimePicker: React.FC<PickerProps> = ({ todo }) => {
+const DateAndTimePicker: React.FC<TimePickerProps> = ({ todo }) => {
   const { toggleDeadline } = useContext(TodoContext);
 
   const handleChange = (value: string | Moment) => {

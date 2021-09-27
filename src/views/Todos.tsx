@@ -9,16 +9,15 @@ const Todos: React.FC = () => {
   const { view } = useContext(NavigationContext);
   const [selectedTodos, setSelectedTodos] = useState<Todo[]>([]);
 
-  const Heading = () => {
-    return (
-      <div className={styles.todosHeading}>
-        <h2 style={{ textAlign: "center" }}>{view}</h2>
-      </div>
-    );
-  };
-  const IfNoTodo = () => {
-    return <div style={{ textAlign: "center" }}>Add some todos</div>;
-  };
+  const Heading = () => (
+    <div className={styles.todosHeading}>
+      <h2 style={{ textAlign: "center" }}>{view}</h2>
+    </div>
+  );
+
+  const IfNoTodo = () => (
+    <div style={{ textAlign: "center" }}>Add some todos</div>
+  );
 
   useEffect(() => {
     const selected = todos.filter((todo) => todo.status === view);
@@ -28,13 +27,10 @@ const Todos: React.FC = () => {
   return (
     <div className={styles.todosContainer}>
       <Heading />
-      <div>
-        {selectedTodos.length === 0 && <IfNoTodo />}
-
-        {selectedTodos.map((todo, i) => (
-          <Todo todo={todo} key={i} />
-        ))}
-      </div>
+      {selectedTodos.length === 0 && <IfNoTodo />}
+      {selectedTodos.map((todo, i) => (
+        <Todo todo={todo} key={i} />
+      ))}
     </div>
   );
 };

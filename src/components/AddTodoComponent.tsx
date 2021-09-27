@@ -8,16 +8,14 @@ const AddTodoComponent: React.FC = () => {
   const { addTodo } = useContext(TodoContext);
   const [inputData, setInputData] = useState<string>("");
 
-  const handleAddTodo = (e: React.FormEvent, inputData: Todo | any) => {
+  const handleAddTodo = (e: React.FormEvent, inputData: string) => {
     e.preventDefault();
     if (inputData === "") {
-      alert("Please input a todo.")
-     
+      alert("Please input a todo.");
     } else {
       addTodo(inputData, uuidv4());
       setInputData("");
     }
-    
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

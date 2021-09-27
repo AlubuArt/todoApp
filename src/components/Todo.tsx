@@ -6,7 +6,6 @@ import DateAndTimePicker from "./DateAndTimePicker";
 
 interface TodoProps {
   todo: Todo;
-  key: number;
 }
 
 const Todo: React.FC<TodoProps> = ({ todo }, key) => {

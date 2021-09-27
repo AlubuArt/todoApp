@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Moment } from "moment";
 
-export interface TodoContextInterface {
+interface TodoContextInterface {
   todos: Todo[];
   todo: Todo;
   addTodo: (title: string, todoID: string) => void;
@@ -53,7 +53,7 @@ const TodoProvider: React.FC = ({ children }) => {
         todo.status = status;
       }
     });
-    setTodos([...todos]);
+   setTodos([...todos]);
   };
 
   const toggleDeadline = (todoID: string, deadline: string | Moment) => {
